@@ -25,7 +25,7 @@ pub fn solve_part1(input: &[Password]) -> usize {
     let mut n = 0;
     for pw in input {
         let m = pw.pw.chars().filter(|&c| c == pw.letter).count();
-        if m >= pw.lo && m <= pw.hi {
+        if (pw.lo..=pw.hi).contains(&m) {
             n += 1;
         }
     }
