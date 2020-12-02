@@ -22,14 +22,10 @@ pub fn input_generator(input: &str) -> Vec<Password> {
 
 #[aoc(day2, part1)]
 pub fn solve_part1(input: &[Password]) -> usize {
-    let mut n = 0;
-    for pw in input {
-        let m = pw.pw.chars().filter(|&c| c == pw.letter).count();
-        if (pw.lo..=pw.hi).contains(&m) {
-            n += 1;
-        }
-    }
-    n
+    input
+        .iter()
+        .filter(|pw| (pw.lo..=pw.hi).contains(&pw.pw.chars().filter(|&c| c == pw.letter).count()))
+        .count()
 }
 
 #[aoc(day2, part2)]
