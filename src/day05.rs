@@ -1,18 +1,13 @@
 #[aoc_generator(day5)]
 pub fn input_generator(input: &str) -> Vec<u32> {
-    let mut seats = Vec::new();
-    for seat in input.lines() {
-        let mut n = 0;
-        for bit in seat.chars() {
-            if ['B', 'R'].contains(&bit) {
-                n |= 1;
-            }
-            n <<= 1;
-        }
-        n >>= 1;
-        seats.push(n);
-    }
-    seats
+    input
+        .lines()
+        .map(|seat| {
+            seat.chars().fold(0, |acc, bit| {
+                acc << 1 | if ['B', 'R'].contains(&bit) { 1 } else { 0 }
+            })
+        })
+        .collect()
 }
 
 #[aoc(day5, part1)]
