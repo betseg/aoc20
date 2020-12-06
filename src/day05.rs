@@ -17,7 +17,7 @@ pub fn solve_part1(input: &[u32]) -> u32 {
 
 #[aoc(day5, part2)]
 pub fn solve_part2(input: &[u32]) -> u32 {
-    (8..1017)
+    (0..1024)
         .filter(|&n| input.contains(&(n - 1)) && !input.contains(&n) && input.contains(&(n + 1)))
         .next()
         .unwrap()
