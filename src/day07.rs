@@ -47,7 +47,7 @@ pub fn input_generator(input: &str) -> HashMap<Vertex, HashSet<Edge>> {
 
 #[aoc(day7, part1)]
 pub fn solve_part1(input: &HashMap<Vertex, HashSet<Edge>>) -> usize {
-    input.keys().filter(|big| dfs(big, input)).count()
+    input.keys().filter(|big| dfs(big, input)).count() // i know this can be optimized, idc
 }
 
 #[aoc(day7, part2)]
