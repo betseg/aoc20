@@ -12,14 +12,13 @@ pub fn input_generator(input: &str) -> Vec<u32> {
 
 #[aoc(day5, part1)]
 pub fn solve_part1(input: &[u32]) -> u32 {
-    input.iter().max().unwrap().clone()
+    *input.iter().max().unwrap()
 }
 
 #[aoc(day5, part2)]
 pub fn solve_part2(input: &[u32]) -> u32 {
     (0..1024)
-        .filter(|&n| input.contains(&(n - 1)) && !input.contains(&n) && input.contains(&(n + 1)))
-        .next()
+        .find(|&n| input.contains(&(n - 1)) && !input.contains(&n) && input.contains(&(n + 1)))
         .unwrap()
 }
 
