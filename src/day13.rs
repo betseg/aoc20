@@ -45,6 +45,7 @@ pub fn solve_part2((_est, input): &(isize, Vec<Option<isize>>)) -> isize {
         % mul
 }
 
+#[allow(clippy::many_single_char_names)]
 fn bezout(a: isize, b: isize) -> (isize, isize) {
     let (mut old_r, mut r) = (a, b);
     let (mut old_s, mut s) = (1, 0);
