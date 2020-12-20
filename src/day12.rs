@@ -53,6 +53,8 @@ pub fn solve_part1(input: &[Instruction]) -> isize {
 
     for instr in input {
         match instr.dir {
+            // dir @ (Direction::North | Direction::South | Direction::East | Direction::West) => {
+            // RFC #2535
             dir @ Direction::North
             | dir @ Direction::South
             | dir @ Direction::East
