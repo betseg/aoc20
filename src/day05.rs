@@ -12,7 +12,7 @@ pub fn input_generator(input: &str) -> Vec<u32> {
 
 #[aoc(day5, part1)]
 pub fn solve_part1(input: &[u32]) -> u32 {
-    *input.iter().max().unwrap()
+    input.iter().copied().max().unwrap()
 }
 
 #[aoc(day5, part2)]

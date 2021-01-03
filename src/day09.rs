@@ -1,11 +1,11 @@
 use itertools::Itertools;
 
+#[cfg(not(test))]
 const PRESIZE: usize = 25;
-// const PRESIZE: usize = 5;
 
 #[aoc_generator(day9)]
 pub fn input_generator(input: &str) -> Vec<usize> {
-    input.lines().map(|l| l.parse().unwrap()).collect()
+    input.lines().map(str::parse).map(Result::unwrap).collect()
 }
 
 #[aoc(day9, part1)]
@@ -38,7 +38,9 @@ pub fn solve_part2(input: &[usize]) -> usize {
     unreachable!()
 }
 
-/*
+#[cfg(test)]
+const PRESIZE: usize = 5;
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -101,4 +103,3 @@ mod tests {
         );
     }
 }
-*/

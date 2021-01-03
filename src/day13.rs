@@ -7,7 +7,8 @@ pub fn input_generator(input: &str) -> (isize, Vec<Option<isize>>) {
             .nth(1)
             .unwrap()
             .split(',')
-            .map(|n| n.parse().ok())
+            .map(str::parse)
+            .map(Result::ok)
             .collect(),
     )
 }

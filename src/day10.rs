@@ -4,7 +4,8 @@ use std::collections::HashMap;
 pub fn input_generator(input: &str) -> Vec<usize> {
     let mut input = input
         .lines()
-        .map(|l| l.parse().unwrap())
+        .map(str::parse)
+        .map(Result::unwrap)
         .collect::<Vec<_>>();
     input.push(0);
     input.sort_unstable();
