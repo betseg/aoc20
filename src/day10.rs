@@ -33,7 +33,6 @@ pub fn solve_part2(input: &[usize]) -> usize {
     dp(input, 0, &mut map)
 }
 
-// thanks Jonathan Paulson
 fn dp(input: &[usize], i: usize, mut map: &mut HashMap<usize, usize>) -> usize {
     if i == input.len() - 1 {
         return 1;
