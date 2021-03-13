@@ -121,8 +121,8 @@ impl Passport {
 
     fn hgt_valid(&self) -> bool {
         match self.height {
-            Some(Height::Cm(Ok(cm))) => 150 <= cm && cm <= 193,
-            Some(Height::In(Ok(inch))) => 59 <= inch && inch <= 76,
+            Some(Height::Cm(Ok(cm))) => (150..=193).contains(&cm),
+            Some(Height::In(Ok(inch))) => (59..=76).contains(&inch),
             _ => false,
         }
     }
